@@ -1,7 +1,6 @@
-
 import React from 'react';
 
-const TodoItem = ({ todo, onToggle }) => {
+const TodoItem = ({ todo, onToggle, onRemove }) => {
   return (
     <li>
       <input
@@ -10,6 +9,7 @@ const TodoItem = ({ todo, onToggle }) => {
         onChange={() => onToggle(todo.id)}
       />
       {todo.text}
+      <button onClick={() => onRemove(todo.id)}>Remove</button> 
     </li>
   );
 };
